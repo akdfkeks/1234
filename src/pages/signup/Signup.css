@@ -1,0 +1,75 @@
+/* 전체적인 margin-top과 높이조절필요 */
+
+.page{
+    width:800px; 
+}
+.title{
+    margin-top: 30px;
+    text-align: center;
+    color:#1E9CEA;
+    font-size: 80px;
+    font-weight: 500;
+}
+.logbox{
+    height: 380px; width: 440px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    margin-top: 165px;
+    text-align: center;
+    padding:30px;
+    padding-top: 65px;
+    
+}
+.form{
+    width: 440px;
+    border-right:0px; 
+    border-top:0px; 
+    border-left:0px; 
+    text-align: left;
+    margin-bottom: 26px;
+    font-size: 18px;
+}
+#rep{
+    margin: 0;
+}
+#login{
+    width: 440px; height: 40px;
+   background-color: #1E9CEA;
+   border:none;
+   color:white;
+   border-radius: 10px;
+   font-size: 16px;
+
+}
+#signup{
+    width: 220px; height: 40px;
+    background-color: #1E9CEA;
+    border:none;
+    color:white;
+    border-radius: 10px;
+    margin-top: 26px;
+    font-size: 16px;
+    margin-top: 65px;
+}
+#find{
+    font-size: 12px;
+    color:#C1C1C1;
+    text-decoration: none;
+    margin-left: 294px;
+}
+#hr{
+    width: 440px;
+    margin-top: 45px;
+}
+#pc{
+    color:red;
+    font-size: 14px;
+    text-align: left;
+}
+#ic{
+    color:red;
+    font-size: 18px;
+ 
+}
