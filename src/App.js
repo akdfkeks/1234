@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import BoardList from './components/board/boardList';
+import Title from './components/board/Title';
+import MainCalendar from './components/calendar/MainCalendar';
+import AddToDo from './components/todolist/addToDo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Title text="게시판 목록" />
+      <BoardList />
+      <MainCalendar />
+      <AddToDo />
     </div>
   );
 }

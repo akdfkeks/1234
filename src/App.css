@@ -1,38 +1,281 @@
-.App {
-  text-align: center;
+/* Home Page Container */
+.homepage__container {
+  max-width: 634px;
+  max-height: 263px;
+  margin-left: 274px;
+  margin-top: 542px;
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ToDo App Input Box */
+.todoapp__inputbox {
+  width: 100%;
+  display: flex;  
+}
+.todoapp__inputbox-inp {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #f1f3f5;
+  padding: 10px;
+  height: 40px;
+  box-sizing: border-box;
+}
+.todoapp__inputbox-inp:focus {
+  outline: none;
+}
+.todoapp__inputbox-add-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #d0ebff;
+  color: #1c7ed6;
+  height: 40px;
+  width: 40px;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ToDo Item List */
+.todoapp__list {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
+}
+.todoapp__list-tit {
+  font-weight: bold;
+  margin: 0;
+}
+.todoapp__list-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ToDo Item */
+.todoapp__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 36px;
+}
+.todoapp__item:last-child {
+  margin-bottom: 0;
+}
+.todoapp__item-checkbox {
+  margin-right: 10px;
+}
+.todoapp__item-edit-input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #f1f3f5;
+  padding: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+.todoapp__item-edit-input:focus {
+  outline: none;
+}
+.todoapp__item-ctx {
+  flex: 1;
+}
+.todoapp__item-ctx-checked {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #868e96;
+}
+.todoapp__item-edit-btn,
+.todoapp__item-delete-btn {
+  border: none;
+  border-radius: 0;
+  height: 36px;
+  width: 36px;
+  background-color: inherit;
+}
+.todoapp__item-edit-btn:hover,
+.todoapp__item-delete-btn:hover {
+  cursor: pointer;
+  background-color: #d0ebff;
+}
+.todoapp__item-edit-btn {
+  margin-right: 3px;
+}
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+*{
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size:medium;
+}
+
+.react-calendar {
+  width: 600px;
+  max-width: 100%;
+  background: white;
+  /* border: 1px solid #a0a096; */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+}
+.react-calendar--doubleView {
+  width: 700px;
+}
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+}
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.react-calendar__month-view__days__day--weekend {
+  color: blue;
+}
+.react-calendar__month-view__days__day--weekend:nth-child(7n) {
+  color:red;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+}
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+  border-radius: 30px;
+
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+  border-radius: 30px;
+
+}
+.react-calendar__tile--now {
+  background: #ffff76;
+  border-radius: 30px;
+  
+
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #ffffa9;
+  border-radius: 30px;
+
+}
+.react-calendar__tile--hasActive {
+  background: #76baff;
+  border-radius: 30px;
+
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+  border-radius: 30px;
+
+}
+.react-calendar__tile--active {
+  background: #006edc;
   color: white;
+  border-radius: 30px;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1087ff;
+  border-radius: 30px;
+
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+  border-radius: 30px;
+
+
 }
 
-.App-link {
-  color: #61dafb;
+.highlight {
+  background: #31f3e0;
+  border-radius: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.b{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  margin:5px;
+  border:0px;
+}
+
+#b1{
+  background-color: rgb(241, 102, 102);
+}
+#b2{
+  background-color: rgb(246, 246, 86);
+}
+#b3{
+  background-color: greenyellow;
 }
