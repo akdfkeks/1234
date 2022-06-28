@@ -13,7 +13,6 @@ function MainCalendar() {
     "2022-05-07",
     "2022-05-12",
   ];
-  
  
   return (
     

@@ -1,4 +1,4 @@
-import Board from "./boardList";
+import Board from "./board";
 import BoardItem from "./boardItem";
 import { Component } from 'react';
 
@@ -43,7 +43,7 @@ export default class BoardList extends Component {
         return (
             <div>
                 <input 
-                //autoComplete="off"
+                autoComplete="off"
                 id="inputText"
                 type="text"
                 placeholder="게시판 이름">
