@@ -1,6 +1,6 @@
+import { Component } from 'react';
 import Board from "./board";
 import BoardItem from "./boardItem";
-import { Component } from 'react';
 
 export default class BoardList extends Component {
     constructor(props) {
