@@ -2,8 +2,8 @@
 .homepage__container {
   max-width: 634px;
   max-height: 263px;
-  margin-left: 274px;
-  margin-top: 542px;
+  left: 274px;
+  top: 542px;
   overflow-y: scroll;
 }
 

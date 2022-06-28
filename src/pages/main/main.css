@@ -1,0 +1,32 @@
+.Board {
+    position: absolute;
+    width: 166px;
+    height: 384px;
+    left: 52px;
+    top: 139px;
+}
+
+.MainCalendar{
+    position: absolute;
+    width: 634px;
+    height: 493px;
+    left: 274px;
+    top: 47px;
+}
+
+.Follower{
+    position: absolute;
+    width: 166px;
+    height: 384px;
+    left: 52px;
+    top: 542px;
+}
+
+.AddToDo{
+    position: absolute;
+    width: 634px;
+    height: 263px;
+    left: 274px;
+    top: 542px;
+    overflow-y: scroll;
+}
