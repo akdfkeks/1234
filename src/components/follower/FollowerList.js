@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Follower from "./follower";
-import FollowerItem from "./followeItem";
+import FollowerItem from "./followerItem";
 
 export default class FollowerList extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class FollowerList extends Component {
     }
 
     deleteItem(num) {
-        const selected = document.querySelector('#Follower-item'+num);
+        const selected = document.querySelector('#follower-item'+num);
         if (selected) {
             selected.remove();
         }
@@ -40,14 +40,14 @@ export default class FollowerList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="FollowerName">
                 <input
                 autocomplete="off"
                 id="inputText"
                 type="text"
-                placeholder="Follower">
+                placeholder="팔로워 추가">
                 </input>
-                <input type="button" value="↩" onClick={()=>{ this.addItem() }}
+                <input className="AddButton" type="button" value="↩" onClick={()=>{ this.addItem() }}
                 />
                 <Follower items={this.state.items}/>
             </div>
