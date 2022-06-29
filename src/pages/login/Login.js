@@ -60,7 +60,7 @@ export default function Login(){
                     <button onClick={goToMain} id="login_l" type="button">로그인</button><br/>
                     <a href="#" id="find">아이디찾기/비밀번호 찾기</a>
                     <hr id="hr"></hr>
-                    <button id="signup_l" type="text" >회원가입</button><br/>
+                    <Link to="/signup"><button id="signup_l" type="button">회원가입</button><br/></Link>
 
                 </form>
             </div>
