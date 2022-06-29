@@ -50,13 +50,7 @@ function MainCalendar() {
             </>
           );
         }}
-      />
-      <hr></hr>
-      <div>
-        {moment(value).format("MM.DD")} 
-        여기에 쓰면됨요
-      </div>
-         
+      />         
     </div>
     
   );
