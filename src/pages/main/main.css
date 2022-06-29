@@ -4,6 +4,8 @@
     height: 384px;
     left: 52px;
     top: 139px;
+    text-align:center;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.15);
 }
 
 .MainCalendar{
@@ -20,12 +22,14 @@
     height: 384px;
     left: 52px;
     top: 542px;
+    text-align:center;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.15);
 }
 
 .AddToDo{
     position: absolute;
     width: 634px;
-    height: 263px;
+    height: 384px;
     left: 274px;
     top: 542px;
     overflow-y: scroll;
