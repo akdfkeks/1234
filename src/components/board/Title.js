@@ -1,9 +1,12 @@
 import { Component } from "react";
+import './board.css';
 
 export default class Title extends Component {
     render() {
         return (
-            <div>{this.props.text}</div>
+            <div className="Title">
+                {this.props.text}
+            </div>
         );
     }
 }
