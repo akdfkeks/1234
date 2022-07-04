@@ -1,9 +1,12 @@
 import { Component } from 'react';
+import './follower.css';
 
 export default class FollowerTitle extends Component {
     render() {
         return (
-            <div>{this.props.text}</div>
+            <div className="FollowerTitle">
+                {this.props.text}
+            </div>
         );
     }
 }

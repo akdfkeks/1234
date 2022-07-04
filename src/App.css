@@ -4,7 +4,6 @@
   max-height: 263px;
   left: 274px;
   top: 542px;
-  overflow-y: scroll;
 }
 
 /* ToDo App Input Box */
@@ -15,7 +14,8 @@
 .todoapp__inputbox-inp {
   flex: 1;
   border: none;
-  border-bottom: 1px solid #f1f3f5;
+  border: 1px solid #f1f3f5;
+  border-color: #d0ebff;
   padding: 10px;
   height: 40px;
   box-sizing: border-box;
@@ -25,13 +25,13 @@
 }
 .todoapp__inputbox-add-btn {
   border: none;
-  border-radius: 0;
   background-color: #d0ebff;
-  color: #1c7ed6;
+  color: #1e9cea;
   height: 40px;
   width: 40px;
   font-weight: bold;
   font-size: 30px;
+  text-align: center;
 }
 
 /* ToDo Item List */
@@ -62,7 +62,7 @@
 .todoapp__item:last-child {
   margin-bottom: 0;
 }
-.todoapp__item-checkbox {
+.todoapp__itext-decortem-checkbox {
   margin-right: 10px;
 }
 .todoapp__item-edit-input {
@@ -110,18 +110,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
+/* 잠시 주석. 어 어 몰라시발 다 여기에 묶여서빡침
 *{
-  font-family: 'Gowun Dodum', sans-serif;
+  font-family: 'Inter';
   font-size:medium;
+  font-style: normal;
 }
+*/
 
 .react-calendar {
   width: 600px;
   max-width: 100%;
-  background: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  align-items: center;
+  color: #333333;
+
   /* border: 1px solid #a0a096; */
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.125em;
+  
 }
 .react-calendar--doubleView {
   width: 700px;
@@ -143,7 +153,7 @@
   box-sizing: border-box;
 }
 .react-calendar button {
-  margin: 0;
+  margin: 0px 0px 25px 0px;
   border: 0;
   outline: none;
 }
@@ -169,11 +179,12 @@
 .react-calendar__month-view__weekdays {
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.75em;
+  font-weight: 500;
+  font-size: 24px;
 }
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
+  margin-bottom: 25px;
 
 }
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
@@ -187,7 +198,7 @@
   color: blue;
 }
 .react-calendar__month-view__days__day--weekend:nth-child(7n) {
-  color:red;
+  color: red;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
@@ -204,6 +215,7 @@
   background: none;
   text-align: center;
   line-height: 16px;
+  font-size:24px;
 }
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;

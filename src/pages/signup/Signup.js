@@ -14,10 +14,13 @@ export default function Signup(){
     const [isActive,setisActive]=useState(false);
     // const [disable,setdisable]=useState("");
 
-    const goToMain= async()=>{
-        axios({
-            method:'post',
-            url:'http://akdfkeks.iptime.org:3001/auth/signup',
+    const homeAddr = "akdfkeks.iptime.org:3001";
+	//const tempAdder = "";
+
+	const goToMains = async () => {
+		axios({
+			method: "post",
+			url: `http://${homeAddr}/auth/signup`,
             data:{
                 name:name,
                 userId:userId,
@@ -72,8 +75,4 @@ export default function Signup(){
 
                 </form>
             </div>
-        )
-        
-}
-
-
+        )}
