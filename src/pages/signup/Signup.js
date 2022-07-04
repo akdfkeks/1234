@@ -17,7 +17,7 @@ export default function Signup(){
     const goToMain= async()=>{
         axios({
             method:'post',
-            url:'http://192.168.41.107:3000/auth/signup',
+            url:'http://akdfkeks.iptime.org:3001/auth/signup',
             data:{
                 name:name,
                 userId:userId,
