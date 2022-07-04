@@ -1,34 +1,36 @@
-import React, { useState } from 'react';
-import InputBox from '../../components/todolist/InputBox';
-import ToDoItemList from '../../components/todolist/ToDoItemList';
+// 필요없는 코드같은데, 잠시 냅두도록 하겠습니다.
 
-const Home = () => {
-  const [todoList, setTodoList] = useState([]);
+// import React, { useState } from 'react';
+// import InputBox from '../../components/todolist/InputBox';
+// import ToDoItemList from '../../components/todolist/ToDoItemList';
 
-  return (
+// const Home = () => {
+//   const [todoList, setTodoList] = useState([]);
 
-      <div className="homepage__container">
+//   return (
+
+//       <div className="homepage__container">
       
-      {/* ToDo Item을 추가할 수 있는 input 박스 */}
-      <InputBox todoList={todoList} setTodoList={setTodoList} />
+//       {/* ToDo Item을 추가할 수 있는 input 박스 */}
+//       <InputBox todoList={todoList} setTodoList={setTodoList} />
 
-      {/* 할 일 Item 리스트 */}
-      <ToDoItemList
-        title={'할 일'}
-        todoList={todoList}
-        setTodoList={setTodoList}
-        checkedList={false} // (체크되지 않은) 할 일 목록
-      />
+//       {/* 할 일 Item 리스트 */}
+//       <ToDoItemList
+//         title={'할 일'}
+//         todoList={todoList}
+//         setTodoList={setTodoList}
+//         checkedList={false} // (체크되지 않은) 할 일 목록
+//       />
 
-      {/* 완료한 Item 리스트 */}
-      <ToDoItemList
-        title={'완료한 항목'}
-        todoList={todoList}
-        setTodoList={setTodoList}
-        checkedList={true} // (체크되어 있는)완료한 목록
-      />
-      </div>
-  );
-};
+//       {/* 완료한 Item 리스트 */}
+//       <ToDoItemList
+//         title={'완료한 항목'}
+//         todoList={todoList}
+//         setTodoList={setTodoList}
+//         checkedList={true} // (체크되어 있는)완료한 목록
+//       />
+//       </div>
+//   );
+// };
 
-export default Home;
+// export default Home;
