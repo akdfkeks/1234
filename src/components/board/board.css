@@ -1,0 +1,25 @@
+.Title {
+    margin: auto;
+    padding-top: 2px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    
+    width: 147px;
+    height: 18px;
+    background: #F5F5F5;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.15);
+}
+
+.BoardName, #inputText {
+    font-size: 8px;
+    border: 0.2px lightgray;
+}
+
+.BoardName, .AddButton {
+    font-size: 5px;
+}

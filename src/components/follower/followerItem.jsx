@@ -12,7 +12,20 @@ export default class FollowerItem extends Component {
     render() {
         return (
             <li id={"follower-item"+this.props.id}>
+                <input 
+                type="button" 
+                value="✅" 
+                onClick={()=>{
+                    this.checkItem()}}
+                />
                 {this.props.text}
+                <input
+                    type="button"
+                    value="X"
+                    onClick={() => {
+                        this.props.delete(this.props.id);
+                    }}
+                />
             </li>
         );
     }

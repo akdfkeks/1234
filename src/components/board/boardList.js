@@ -41,14 +41,14 @@ export default class BoardList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="BoardName">
                 <input 
                 autoComplete="off"
                 id="inputText"
                 type="text"
                 placeholder="게시판 이름">
                 </input>
-                <input type="button" value="↩" onClick={()=>{ this.addItem() }}
+                <input className="AddButton" type="button" value="↩" onClick={()=>{ this.addItem() }}
                 />
                 <Board items={this.state.items}/>
             </div>

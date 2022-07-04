@@ -13,7 +13,7 @@ class Main extends Component {
         <div>
   
           <div className="Board">
-            <Title text="게시판 목록" />
+            <Title text="게시판" />
             <BoardList />
           </div>
   
