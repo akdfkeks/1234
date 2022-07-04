@@ -45,13 +45,18 @@
 }
 #signup{
     width: 220px; height: 40px;
-    background-color: #1E9CEA;
     border:none;
     color:white;
     border-radius: 10px;
     margin-top: 26px;
     font-size: 16px;
     margin-top: 65px;
+}
+.activebtn{
+    background-color: #1E9CEA;
+}
+.unactivebtn{
+    background-color: #c1c6c9;
 }
 #find{
     font-size: 12px;
