@@ -73,8 +73,14 @@
     font-size: 14px;
     text-align: left;
 }
+.hide{
+    visibility: hidden;
+}
+.unhide{
+    visibility: visible;
+}
 #ic{
     color:red;
     font-size: 18px;
- 
+    visibility: hidden;
 }
