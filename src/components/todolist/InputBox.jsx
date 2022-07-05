@@ -35,7 +35,7 @@ const InputBox = ({ todoList, setTodoList }) => {
         name="todoItem"
         value={text}
         ref={inputRef}
-        placeholder="할 일을 입력해주세요"
+        placeholder="뭐 해 ? 엉 ?"
         className="todoapp__inputbox-inp"
         onChange={onChangeInput}
       />

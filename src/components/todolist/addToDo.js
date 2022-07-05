@@ -15,7 +15,7 @@ const AddToDo = () => {
   
         {/* 할 일 Item 리스트 */}
         <ToDoItemList
-          title={'오늘의 할 일'}
+          title={'할 일'}
           todoList={todoList}
           setTodoList={setTodoList}
           checkedList={false} // (체크되지 않은) 할 일 목록
@@ -23,7 +23,6 @@ const AddToDo = () => {
   
         {/* 완료한 Item 리스트 */}
         <ToDoItemList
-          title={'끝낸 일'}
           todoList={todoList}
           setTodoList={setTodoList}
           checkedList={true} // (체크되어 있는)완료한 목록
