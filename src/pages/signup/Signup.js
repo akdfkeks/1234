@@ -27,11 +27,10 @@ export default function Signup(){
                 }
             })
             .then(Response=>{if(Response.data.success){
-                                    navigate("/main")
-                                }
-
-                            }
-                            )
+                                    navigate("/main")}
+            })
+            .catch(error=>{alert("이미 회원정보가 있습니다.");})
+                
         }else{
             console.log("회원가입 실패")
         }

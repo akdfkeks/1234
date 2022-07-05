@@ -20,13 +20,11 @@ export default function Login(){
                 }
             })
             .then(Response=>{
-                                if(Response.data.success===true){
+                                if(Response.data.success){
                                     navigate("/main")
                                 }
-                                else{
-                                    alert("로그인실패");
-                                }
                             })
+            .catch(error=>(alert("로그인 오류. 회원정보가 없습니다.")))
         }
 
     const onChangeid=(e)=>{
