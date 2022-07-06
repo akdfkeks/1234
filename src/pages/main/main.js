@@ -26,10 +26,10 @@ class Main extends Component {
             <FollowerList />
           </div>
 
-          <div className="AddToDo">
+          {/* <div className="AddToDo">
            <AddToDo />
           </div>
-      
+       */}
         </div>
       );
     }

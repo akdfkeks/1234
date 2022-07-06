@@ -16,7 +16,8 @@ export default function Login(){
             data:{
                 userId:userId,
                 userPw:userPw,
-            }})
+            }},
+            {withCredentials:true})
             .then(Response=>{console.log(Response.data);})}
     const onChangeid=(e)=>{
         setuserId(e.target.value);
