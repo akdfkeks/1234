@@ -1,6 +1,7 @@
 import Board from "./board";
 import BoardItem from "./boardItem";
 import { Component } from 'react';
+import axios from 'axios';
 
 export default class BoardList extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ export default class BoardList extends Component {
 
         this.state = {
             itemNum: 0,
-            items: []
+            items: [],
+            homeAddr:"172.30.17.114:3001"
         };
     }
 
@@ -21,7 +23,7 @@ export default class BoardList extends Component {
 
     addItem() {
         const inputText = document.querySelector('#inputText');
-        if (inputText.value) {
+        if (inputText.value){
             const tempArr = [...this.state.items];
             tempArr.push(
             <BoardItem
@@ -35,6 +37,14 @@ export default class BoardList extends Component {
             this.setState({
                 items: tempArr
             })
+            axios({
+                method:'post',
+                url:`http://${this.state.homeAddr}/user/board`,
+                data:{
+                    bordTitle:this.setState.items
+                }
+            }).then(Response=>{console.log(Response)})
+            
             inputText.value=""
         }
     }
@@ -48,7 +58,7 @@ export default class BoardList extends Component {
                 type="text"
                 placeholder="게시판 이름">
                 </input>
-                <input className="AddButton" type="button" value="↩" onClick={()=>{ this.addItem() }}
+                <input className="AddButton" type="button" value="↩" name="boardTitle" onClick={()=>{ this.addItem() }}
                 />
                 <Board items={this.state.items}/>
             </div>

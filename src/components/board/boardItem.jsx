@@ -9,6 +9,7 @@ export default class BoardItem extends Component {
             checkComponent.style.cssText = "text-decoration: line-through";
         }
     }
+    
     render() {
         return (
             <li id={"board-item"+this.props.id}>
