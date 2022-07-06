@@ -1,6 +1,6 @@
 import './main.css';
 import React, { Component } from 'react';
-import BoardList from '../../components/board/BoardList';
+import BoardList from '../../components/board/boardList';
 import Title from '../../components/board/Title';
 import FollowerList from '../../components/follower/FollowerList';
 import FollowerTitle from '../../components/follower/FollowerTitle';
