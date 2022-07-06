@@ -17,8 +17,7 @@ export default function Login(){
             data:{
                 userId:userId,
                 userPw:userPw,
-                }
-            })
+            }})
             .then(Response=>{
                                 if(Response.data.success===true){
                                     navigate("/main")
@@ -28,6 +27,7 @@ export default function Login(){
                                 }
                             })
         }
+
 
     const onChangeid=(e)=>{
         setuserId(e.target.value);
