@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Login() {
-	//const homeAddr="172.30.17.114:3001";
-	const homeAddr = "akdfkeks.iptime.org:3001";
+	const homeAddr="172.30.17.114:3001";
+	// const homeAddr = "akdfkeks.iptime.org:3001";
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");
 	const [userPw, setuserPw] = useState("");
@@ -21,6 +21,7 @@ export default function Login() {
 			},
 		}).then((Response) => {
 			if (Response.data.success === true) {
+				//서버에 보내줄때 쿠키를 토큰에 담아서 보낼 것이다.
 				const { accessToken } = Response.data;
 				axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
 				navigate("/main");

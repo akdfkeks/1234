@@ -1,16 +1,16 @@
 import Board from "./board";
 import BoardItem from "./boardItem";
-import { Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 export default class BoardList extends Component {
 	constructor(props) {
 		super(props);
-
+        
 		this.state = {
 			itemNum: 0,
 			items: [],
-			homeAddr: "akdfkeks.iptime.org:3001",
+			
 		};
 	}
 
@@ -23,8 +23,10 @@ export default class BoardList extends Component {
 
 	addItem() {
 		const inputText = document.querySelector("#inputText");
+        const homeAddr= "172.30.17.114:3001"
 		if (inputText.value) {
 			const tempArr = [...this.state.items];
+     
 			tempArr.push(
 				<BoardItem
 					//id={this.state.itemNum++}
@@ -40,15 +42,15 @@ export default class BoardList extends Component {
 			});
 			axios({
 				method: "post",
-				url: `http://${this.state.homeAddr}/user/board`,
+				url: `http://${homeAddr}/user/board`,
 				data: {
-					boardTitle: this.setState.items,
+					boardTitle: tempArr[this.state.itemNum].props.text
 				},
-			}).then((Response) => {
+			}).then(Response => {
 				console.log(Response);
-			});
-
-			inputText.value = "";
+            
+			})
+			// inputText.value = "";
 		}
 	}
 

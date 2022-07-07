@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import './board.css';
 
 export default class Title extends Component {
