@@ -1,6 +1,7 @@
 import BoardItem from "./boardItem";
 import React, { Component } from "react";
 import axios from "axios";
+import Board from "./board";
 
 export default class BoardList extends Component {
 	constructor(props) {
@@ -59,7 +60,7 @@ export default class BoardList extends Component {
 						this.addBoard();
 					}}
 				/>
-				<ul>{this.state.boardList}</ul>
+				<Board items={this.state.boardList} />
 			</div>
 		);
 	}
