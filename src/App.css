@@ -153,9 +153,11 @@
   box-sizing: border-box;
 }
 .react-calendar button {
-  margin: 0px 0px 25px 0px;
+  margin:0 0px 15px 0;
   border: 0;
   outline: none;
+  width:56px;
+  height: 56px;
 }
 
 .react-calendar button:enabled:hover {
@@ -270,7 +272,11 @@
 
 }
 .react-calendar__navigation{
-  margin-bottom:0;
+  margin-bottom:20px;
+}
+.react-calendar__navigation__label__labelText--from{
+  font-size: 24px;
+  font-weight: 700;
 }
 
 
