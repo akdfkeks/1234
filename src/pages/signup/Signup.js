@@ -15,9 +15,8 @@ export default function Signup() {
 	const [isHide, setisHide] = useState(true);
 	// const [disable,setdisable]=useState("");
 
-
 	const goToMain = async () => {
-		console.log(name, userId, userPw);
+		//console.log(name, userId, userPw);
 		if (isActive) {
 			axios({
 				method: "post",
@@ -58,7 +57,6 @@ export default function Signup() {
 			setisHide(false);
 		}
 	};
-
 
 	return (
 		<div className="page">

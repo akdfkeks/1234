@@ -6,7 +6,8 @@ import Board from "./board";
 export default class BoardList extends Component {
 	constructor(props) {
 		super(props);
-		this.homeAddr = "172.16.17.124:3001";
+		//this.homeAddr = "172.16.17.124:3001";
+		this.homeAddr = "akdfkeks.iptime.org:3001";
 		this.dataList = [];
 		this.itemIndex = 0;
 		this.state = {
@@ -22,15 +23,15 @@ export default class BoardList extends Component {
 		}).then((res) => {
 			this.dataList = res.data.data;
 			this.createBoardItem();
+			console.log(this.dataList);
 		});
 	}
 	createBoardItem() {
 		let tempArr = [];
 		this.dataList.forEach((board) => {
-			tempArr.push(<BoardItem id={this.itemIndex++} text={board.title} />);
+			this.state.boardList.push(<BoardItem id={this.itemIndex++} text={board.title} />);
 		});
-		this.state.boardList = tempArr;
-		console.log(this.state.boardList);
+		//this.state.boardList = tempArr;
 	}
 	addBoard() {
 		const inputText = document.querySelector("#inputText");
@@ -48,6 +49,7 @@ export default class BoardList extends Component {
 		}
 	}
 	render() {
+		console.log(this.dataList);
 		return (
 			<div className="BoardName">
 				<input autoComplete="off" id="inputText" type="text" placeholder="게시판 이름"></input>
@@ -60,7 +62,7 @@ export default class BoardList extends Component {
 						this.addBoard();
 					}}
 				/>
-				<Board items={this.state.boardList} />
+				<ul>{this.state.boardList[0]}</ul>
 			</div>
 		);
 	}
