@@ -1,4 +1,3 @@
-import Board from "./board";
 import BoardItem from "./boardItem";
 import React, { Component } from "react";
 import axios from "axios";
@@ -6,47 +5,47 @@ import axios from "axios";
 export default class BoardList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			itemNum: 0,
-			tempArr: [],
-		};
 		this.homeAddr = "172.16.17.124:3001";
-	}
-	deleteItem(num) {
-		const selected = document.querySelector("#board-item" + num);
-		if (selected) {
-			selected.remove();
-		}
+		this.dataList = [];
+		this.itemIndex = 0;
+		this.state = {
+			boardList: [],
+		};
+		this.getBoardList();
 	}
 
-	addItem() {
+	getBoardList() {
+		axios({
+			method: "get",
+			url: `http://${this.homeAddr}/user/board`,
+		}).then((res) => {
+			this.dataList = res.data.data;
+			this.createBoardItem();
+		});
+	}
+	createBoardItem() {
+		let tempArr = [];
+		this.dataList.forEach((board) => {
+			tempArr.push(<BoardItem id={this.itemIndex++} text={board.title} />);
+		});
+		this.state.boardList = tempArr;
+		console.log(this.state.boardList);
+	}
+	addBoard() {
 		const inputText = document.querySelector("#inputText");
-		// const tempArr=[]
 		if (inputText.value) {
-			this.state.tempArr.push(
-				<BoardItem
-					//id={this.state.itemNum++}
-					id={this.setState({ itemNum: this.state.itemNum + 1 })}
-					text={inputText.value}
-					delete={(num) => {
-						this.deleteItem(num);
-					}}
-				/>
-			);
-			this.setState({
-				tempArr: this.state.tempArr.concat(inputText),
-			});
 			axios({
 				method: "post",
 				url: `http://${this.homeAddr}/user/board`,
 				data: {
-					boardTitle: "fortest",
+					boardTitle: inputText.value,
 				},
-			}).then((Response) => {});
-			// inputText.value = "";
+			}).then((res) => {
+				this.dataList = res.data.data;
+				this.createBoardItem();
+			});
 		}
 	}
-
 	render() {
 		return (
 			<div className="BoardName">
@@ -57,10 +56,10 @@ export default class BoardList extends Component {
 					value="↩"
 					name="boardTitle"
 					onClick={() => {
-						this.addItem();
+						this.addBoard();
 					}}
 				/>
-				<Board />
+				<ul>{this.state.boardList}</ul>
 			</div>
 		);
 	}
