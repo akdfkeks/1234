@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./board.css";
 
 export default class BoardItem extends Component {
 	constructor(props) {
@@ -23,14 +24,7 @@ export default class BoardItem extends Component {
 	render() {
 		return (
 			<li id={"board-item" + this.props.id}>
-				<input
-					type="button"
-					value="✅"
-					onClick={() => {
-						this.checkItem();
-					}}
-				/>
-				{this.props.text}
+				<span className="BoardTitle">{"📋 " + this.props.text}</span>
 				<input
 					type="button"
 					value="X"

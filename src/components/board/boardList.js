@@ -1,7 +1,6 @@
 import BoardItem from "./boardItem";
 import React, { Component } from "react";
-import axios from "axios";
-import Board from "./board";
+import { getBoardList, createBoard } from "../../function/request";
 
 export default class BoardList extends Component {
 	constructor(props) {
@@ -13,43 +12,28 @@ export default class BoardList extends Component {
 		this.state = {
 			boardList: [],
 		};
-		this.getBoardList();
+		this.getBoard();
 	}
 
-	getBoardList() {
-		axios({
-			method: "get",
-			url: `http://${this.homeAddr}/user/board`,
-		}).then((res) => {
-			this.dataList = res.data.data;
-			this.createBoardItem();
-			console.log(this.dataList);
-		});
+	async getBoard() {
+		this.dataList = await getBoardList();
+		this.createBoardItem();
 	}
 	createBoardItem() {
-		let tempArr = [];
-		this.dataList.forEach((board) => {
-			this.state.boardList.push(<BoardItem id={this.itemIndex++} text={board.title} />);
+		this.setState({
+			boardList: this.dataList.map((board) => {
+				return <BoardItem key={this.itemIndex} id={this.itemIndex++} text={board.title} />;
+			}),
 		});
-		//this.state.boardList = tempArr;
 	}
-	addBoard() {
+	async addBoard() {
 		const inputText = document.querySelector("#inputText");
 		if (inputText.value) {
-			axios({
-				method: "post",
-				url: `http://${this.homeAddr}/user/board`,
-				data: {
-					boardTitle: inputText.value,
-				},
-			}).then((res) => {
-				this.dataList = res.data.data;
-				this.createBoardItem();
-			});
+			this.dataList = await createBoard(inputText.value);
+			this.createBoardItem();
 		}
 	}
 	render() {
-		console.log(this.dataList);
 		return (
 			<div className="BoardName">
 				<input autoComplete="off" id="inputText" type="text" placeholder="게시판 이름"></input>
@@ -62,7 +46,7 @@ export default class BoardList extends Component {
 						this.addBoard();
 					}}
 				/>
-				<ul>{this.state.boardList[0]}</ul>
+				<ul className="BoardList">{this.state.boardList}</ul>
 			</div>
 		);
 	}

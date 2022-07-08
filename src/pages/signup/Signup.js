@@ -1,11 +1,10 @@
 import "./Signup.css";
 import React, { useState } from "react";
-import axios from "axios";
+import { signup } from "../../function/request.js";
 import { useNavigate } from "react-router-dom";
 // from 'prop-types';
 
 export default function Signup() {
-	const homeAddr = "akdfkeks.iptime.org:3001";
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");
 	const [userPw, setuserPw] = useState("");
@@ -13,26 +12,19 @@ export default function Signup() {
 	const [userPwc, setuserPwc] = useState("");
 	const [isActive, setisActive] = useState(false);
 	const [isHide, setisHide] = useState(true);
-	// const [disable,setdisable]=useState("");
 
-	const goToMain = async () => {
-		//console.log(name, userId, userPw);
+	const signupButtonListener = async () => {
 		if (isActive) {
-			axios({
-				method: "post",
-				url: `http://${homeAddr}/auth/signup`,
-				data: {
-					name: name,
-					userId: userId,
-					userPw: userPw,
-				},
-			}).then((Response) => {
-				if (Response.data.success) {
-					navigate("/main");
+			try {
+				const flag = await signup(name, userId, userPw);
+				if (flag === true) {
+					navigate("/");
+					alert("Signup succed!");
 				}
-			});
-		} else {
-			console.log("회원가입 실패");
+			} catch (err) {
+				console.log(err);
+				alert("Signup failed");
+			}
 		}
 	};
 
@@ -81,7 +73,7 @@ export default function Signup() {
 				<p className={isHide ? "hide" : "unhide"} id="pc">
 					비밀번호가 일치하지 않습니다.
 				</p>
-				<button className={isActive ? "activebtn" : "unactivebtn"} id="signup" onClick={goToMain} type="button">
+				<button className={isActive ? "activebtn" : "unactivebtn"} id="signup" onClick={signupButtonListener} type="button">
 					회원가입
 				</button>
 				<br />
