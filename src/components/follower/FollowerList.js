@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Follower from "./follower";
 import FollowerItem from "./followerItem";
 

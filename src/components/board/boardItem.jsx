@@ -1,6 +1,11 @@
-import { Component } from "react";
+import React, { Component } from "react";
+import "./board.css";
 
 export default class BoardItem extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
 	checkItem() {
 		const checkComponent = document.querySelector("#board-item" + this.props.id);
 		if (checkComponent.style.cssText) {
@@ -10,22 +15,21 @@ export default class BoardItem extends Component {
 		}
 	}
 
+	delete(id) {
+		const selected = document.querySelector("#board-item" + id);
+		if (selected) {
+			selected.remove();
+		}
+	}
 	render() {
 		return (
 			<li id={"board-item" + this.props.id}>
-				<input
-					type="button"
-					value="✅"
-					onClick={() => {
-						this.checkItem();
-					}}
-				/>
-				{this.props.text}
+				<span className="BoardTitle">{"📋 " + this.props.text}</span>
 				<input
 					type="button"
 					value="X"
 					onClick={() => {
-						this.props.delete(this.props.id);
+						this.delete(this.props.id);
 					}}
 				/>
 			</li>
