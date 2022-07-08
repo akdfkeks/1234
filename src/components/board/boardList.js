@@ -9,8 +9,9 @@ export default class BoardList extends Component {
         
 		this.state = {
 			itemNum: 0,
-			items: [],
-			
+			// items: [],
+			tempArr:[],
+
 		};
 	}
 
@@ -23,11 +24,12 @@ export default class BoardList extends Component {
 
 	addItem() {
 		const inputText = document.querySelector("#inputText");
-        const homeAddr= "172.30.17.114:3001"
+        const homeAddr= "172.16.17.124:3001"
+        // const tempArr=[]
 		if (inputText.value) {
-			const tempArr = [...this.state.items];
+			
      
-			tempArr.push(
+			this.state.tempArr.push(
 				<BoardItem
 					//id={this.state.itemNum++}
 					id={this.setState({ itemNum: this.state.itemNum + 1 })}
@@ -38,17 +40,17 @@ export default class BoardList extends Component {
 				/>
 			);
 			this.setState({
-				items: tempArr,
+				tempArr: this.state.tempArr.concat(inputText),
 			});
 			axios({
 				method: "post",
 				url: `http://${homeAddr}/user/board`,
 				data: {
-					boardTitle: tempArr[this.state.itemNum].props.text
+					boardTitle: this.state.tempArr[this.state.itemNum].props.text
 				},
 			}).then(Response => {
 				console.log(Response);
-            
+                console.log(this.state.tempArr);
 			})
 			// inputText.value = "";
 		}
@@ -67,7 +69,7 @@ export default class BoardList extends Component {
 						this.addItem();
 					}}
 				/>
-				<Board items={this.state.items} />
+				<Board items={this.state.tempArr} />
 			</div>
 		);
 	}
