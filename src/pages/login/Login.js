@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Login() {
-	//const homeAddr="172.30.17.114:3001";
-	const homeAddr = "akdfkeks.iptime.org:3001";
+	const homeAddr="172.30.17.114:3001";
+	//const homeAddr = "akdfkeks.iptime.org:3001";
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");
 	const [userPw, setuserPw] = useState("");
@@ -63,9 +63,9 @@ export default function Login() {
 					로그인
 				</button>
 				<br />
-				<a href="#" id="find">
+				<p id="find">
 					아이디찾기/비밀번호 찾기
-				</a>
+				</p>
 				<hr id="hr"></hr>
 				<Link to="/signup">
 					<button id="signup_l" type="button">
