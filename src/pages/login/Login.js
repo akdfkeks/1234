@@ -3,9 +3,8 @@ import "./Login.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-
 export default function Login() {
-	const homeAddr="172.16.17.124:3001";
+	const homeAddr = "localhost:3001";
 	// const homeAddr = "akdfkeks.iptime.org:3001";
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");

@@ -6,15 +6,12 @@ import axios from "axios";
 export default class BoardList extends Component {
 	constructor(props) {
 		super(props);
-        
 		this.state = {
 			itemNum: 0,
-			// items: [],
-			tempArr:[],
-
+			tempArr: [],
 		};
+		this.homeAddr = "172.16.17.124:3001";
 	}
-
 	deleteItem(num) {
 		const selected = document.querySelector("#board-item" + num);
 		if (selected) {
@@ -24,11 +21,8 @@ export default class BoardList extends Component {
 
 	addItem() {
 		const inputText = document.querySelector("#inputText");
-        const homeAddr= "172.16.17.124:3001"
-        // const tempArr=[]
+		// const tempArr=[]
 		if (inputText.value) {
-			
-     
 			this.state.tempArr.push(
 				<BoardItem
 					//id={this.state.itemNum++}
@@ -44,14 +38,11 @@ export default class BoardList extends Component {
 			});
 			axios({
 				method: "post",
-				url: `http://${homeAddr}/user/board`,
+				url: `http://${this.homeAddr}/user/board`,
 				data: {
-					boardTitle: this.state.tempArr[this.state.itemNum].props.text
+					boardTitle: "fortest",
 				},
-			}).then(Response => {
-				console.log(Response);
-                console.log(this.state.tempArr);
-			})
+			}).then((Response) => {});
 			// inputText.value = "";
 		}
 	}
@@ -69,7 +60,7 @@ export default class BoardList extends Component {
 						this.addItem();
 					}}
 				/>
-				<Board items={this.state.tempArr} />
+				<Board />
 			</div>
 		);
 	}
