@@ -1,21 +1,16 @@
-import React, { Component } from 'react';
+import { Component } from "react";
+import "./board.css";
 
 export default class Board extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            titleArr:[]
-        }
-        this.title();
-    }
-    title(){
-        this.props.items.forEach((i)=> console.log(i));
-        
+	constructor(props) {
+		super(props);
+		this.state = {
+			board: [],
+		};
 
-    };
-    render() {
-        return (
-            <ul> {this.state.titleArr} </ul>
-        );
-    }
+		this.state.board = this.props.items.map((item) => {});
+	}
+	render() {
+		return <ul> {this.state.board} </ul>;
+	}
 }
