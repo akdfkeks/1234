@@ -41,7 +41,16 @@ function MainCalendar() {
 
 	return (
 		<div>
-			<Calendar onChange={onChange} value={value} />
+      <div>
+          <div class="b_all" id="b_red"></div>
+          <div class="b_all" id="b_yel"></div>
+          <div class="b_all" id="b_gre"></div>
+          <Calendar
+            onChange={onChange}
+            value={value}
+            //날짜 숫자 뒤에 '일'없앰
+            formatDay={(locale, date) => moment(date).format("DD")}/>
+        </div>
 
 			<div>여기에는 저장되어있던 데이터들(투두리스트-해당날짜에 맞는)이 불러와져야함.</div>
 		</div>
