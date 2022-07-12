@@ -7,54 +7,58 @@ import axios from "axios";
 // import axios from 'axios';
 
 function MainCalendar() {
-	const [value, onChange] = useState(new Date());
-	//하이라이트가 들어갈 날짜를 배열로 작성
-	// const marks = [
-	//   "2022-05-15",
-	//   "2022-05-03",
-	//   "2022-05-07",
-	//   "2022-05-12",
-	// ];
-	axios({
-		method: "post",
-		url: "",
-		data: {
-			// 특정날짜 선택 시, 그 날짜에 대한 데이터를 요청하는 코드가 들어가야함
-		},
-	}).then((res) => {
-		const data = res.data;
-		const scheduleCart = data.data;
-		const realdata = scheduleCart.schedules; //스케쥴 배열
+  const [value, onChange] = useState(new Date());
+  //하이라이트가 들어갈 날짜를 배열로 작성
+  // const marks = [
+  //   "2022-05-15",
+  //   "2022-05-03",
+  //   "2022-05-07",
+  //   "2022-05-12",
+  // ]; .
+  axios({
+    method: "post",
+    url: "",
+    data: {
+      // 특정날짜 선택 시, 그 날짜에 대한 데이터를 요청하는 코드가 들어가야함
+    },
+  }).then((res) => {
+    const data = res.data;
+    const scheduleCart = data.data;
+    const realdata = scheduleCart.schedules; //스케쥴 배열
 
-		//console.log(realdata.split("T")[0].slice(-2));
+    //console.log(realdata.split("T")[0].slice(-2));
 
-		let calendar = [];
+    let calendar = [];
 
-		for (var i = 0; i < 31; i++) {
-			calendar.push(new Array());
-		}
+    for (var i = 0; i < 31; i++) {
+      calendar.push(new Array());
+    }
 
-		realdata.forEach((schedule) => {
-			calendar[schedule.targetDate.split("T")[0].slice(-2) - 1].push(schedule);
-		});
-	});
+    realdata.forEach((schedule) => {
+      calendar[schedule.targetDate.split("T")[0].slice(-2) - 1].push(schedule);
+    });
+  });
 
-	return (
-		<div>
+  return (
+    <div>
       <div>
-          <div class="b_all" id="b_red"></div>
-          <div class="b_all" id="b_yel"></div>
-          <div class="b_all" id="b_gre"></div>
-          <Calendar
-            onChange={onChange}
-            value={value}
-            //날짜 숫자 뒤에 '일'없앰
-            formatDay={(locale, date) => moment(date).format("DD")}/>
-        </div>
+        <div class="b_all" id="b_red"></div>
+        <div class="b_all" id="b_yel"></div>
+        <div class="b_all" id="b_gre"></div>
+        <Calendar
+          onChange={onChange}
+          value={value}
+          //날짜 숫자 뒤에 '일'없앰
+          formatDay={(locale, date) => moment(date).format("DD")}
+        />
+      </div>
 
-			<div>여기에는 저장되어있던 데이터들(투두리스트-해당날짜에 맞는)이 불러와져야함.</div>
-		</div>
-	);
+      <div>
+        여기에는 저장되어있던 데이터들(투두리스트-해당날짜에 맞는)이
+        불러와져야함.
+      </div>
+    </div>
+  );
 }
 
 export default MainCalendar;
