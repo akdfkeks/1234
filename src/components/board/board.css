@@ -1,5 +1,5 @@
 .Title {
-	margin: auto;
+	margin:auto;
 	padding-top: 2px;
 	font-size: 10px;
 	font-weight: 400;
@@ -12,13 +12,15 @@
 	height: 18px;
 	background: #f5f5f5;
 	border-radius: 30px;
-	box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
+	margin-top: 12px;
 }
 
 .BoardName,
 #inputText {
 	font-size: 8px;
 	border: 0.2px lightgray;
+	margin-top: 5px;
 }
 
 .BoardName,

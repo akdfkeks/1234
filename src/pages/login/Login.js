@@ -3,16 +3,19 @@ import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../function/request";
 
+
 export default function Login() {
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");
 	const [userPw, setuserPw] = useState("");
 
-	const loginButtonListener = async () => {
+	const loginButtonListener = async ({navigation:{navigate}}) => {
 		try {
-			const flag = await login(userId, userPw);
+			const {flag,user} = await login(userId, userPw);
 			if (flag === true) {
-				navigate("/main");
+
+				//user키에 user데이터 전송 이름 같을 경우 user:생략가능
+				navigate("/main",{user:user});
 			}
 		} catch (err) {
 			console.log(err);
