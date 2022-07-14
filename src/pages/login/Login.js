@@ -10,9 +10,9 @@ export default function Login() {
 
 	const loginButtonListener = async () => {
 		try {
-			const flag = await login(userId, userPw);
+			const { flag, user } = await login(userId, userPw);
 			if (flag === true) {
-				navigate("/main");
+				navigate("/main", { state: { user } });
 			}
 		} catch (err) {
 			console.log(err);

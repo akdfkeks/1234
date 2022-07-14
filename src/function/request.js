@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const SERVER = "akdfkeks.iptime.org";
-//const SERVER = "akdfkeks.iptime.org:3001";
+//const SERVER = "akdfkeks.iptime.org";
+const SERVER = "172.16.17.124";
 const PORT = 3001;
 
 let accessToken = null;
@@ -22,7 +22,8 @@ export async function login(userId, userPw) {
 		if (res.data.success === true) {
 			accessToken = res.data.accessToken;
 			request.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-			return true;
+			const user = res.data.user;
+			return { flag: true, user };
 		} else {
 			throw new Error("Login failed");
 		}
