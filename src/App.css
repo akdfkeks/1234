@@ -285,21 +285,39 @@
   border-radius: 30px;
 }
 
-.b_all{
+.b_red{
   width:15px;
   height:15px;
   border-radius:50%;
   margin:5px;
   border:0px;
   display: inline-block;
+  background-color: rgb(244, 190, 190);
 }
-
-#b_red{
-  background-color: rgb(241, 102, 102);
+.b_yel{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  margin:5px;
+  border:0px;
+  display: inline-block;
+  background-color: rgb(247, 227, 173);
 }
-#b_yel{
-  background-color: rgb(246, 246, 86);
+.b_gre{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  margin:5px;
+  border:0px;
+  display: inline-block;
+  background-color: rgb(200, 255, 185);
 }
-#b_gre{
-  background-color: greenyellow;
+.active_r{
+  background-color: red;
+}
+.active_y{
+  background-color: rgb(255, 200, 0);
+}
+.active_g{
+  background-color: rgb(153, 255, 0);
 }

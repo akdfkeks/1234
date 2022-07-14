@@ -4,10 +4,19 @@ import Calendar from "react-calendar";
 import AddToDo from "../todolist/addToDo";
 import moment from "moment";
 import axios from "axios";
+import SecondCalendar from "./SecondCalendar";
+import ThirdCalendar from "./ThirdCalendar";
 // import axios from 'axios';
-
+const obj={
+	0:<Calendar
+	//날짜 숫자 뒤에 '일'없앰
+	formatDay={(locale, date) => moment(date).format("DD")}/>,
+	1:<SecondCalendar/>,
+	2:<ThirdCalendar/>
+}
 function MainCalendar() {
-	const [value, onChange] = useState(new Date());
+	// const [value, onChange] = useState(new Date());
+	const [activeTab, setactiveTab]=useState(0);
 	//하이라이트가 들어갈 날짜를 배열로 작성
 	// const marks = [
 	//   "2022-05-15",
@@ -15,6 +24,11 @@ function MainCalendar() {
 	//   "2022-05-07",
 	//   "2022-05-12",
 	// ];
+
+	const clickHandler=(id)=>{
+		setactiveTab(id)
+	}
+	
 	axios({
 		method: "post",
 		url: "",
@@ -41,16 +55,23 @@ function MainCalendar() {
 
 	return (
 		<div>
-      <div>
-          <div class="b_all" id="b_red"></div>
-          <div class="b_all" id="b_yel"></div>
-          <div class="b_all" id="b_gre"></div>
-          <Calendar
-            onChange={onChange}
-            value={value}
-            //날짜 숫자 뒤에 '일'없앰
-            formatDay={(locale, date) => moment(date).format("DD")}/>
-        </div>
+			<div>
+				<div>
+					<div className={`b_red ${activeTab===0?'active_r':''}`} onClick={()=>clickHandler(0)}></div>
+					<div className={`b_yel ${activeTab===1?'active_y':''}`} onClick={()=>clickHandler(1)}></div>
+					<div className={`b_gre ${activeTab===2?'active_g':''}`} onClick={()=>clickHandler(2)}></div>
+				</div>
+				
+				<div className="content">
+					{obj[activeTab]}
+					{/* <Calendar
+					onChange={onChange}
+					value={value}
+					//날짜 숫자 뒤에 '일'없앰
+					formatDay={(locale, date) => moment(date).format("DD")}/> */}
+				</div>
+				
+			</div>
 
 			<div>여기에는 저장되어있던 데이터들(투두리스트-해당날짜에 맞는)이 불러와져야함.</div>
 		</div>
