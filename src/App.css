@@ -6,6 +6,11 @@
   top: 542px;
 } */
 
+/* 폰트적용 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*{
+  font-family: 'Gowun Dodum', sans-serif;
+}
 /* ToDo App Input Box */
 .todoapp__inputbox {
   width: 100%;
@@ -105,14 +110,6 @@
 }
 
 
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-
 /* 잠시 주석. 어 어 몰라시발 다 여기에 묶여서빡침
 *{
   font-family: 'Inter';
@@ -156,10 +153,13 @@
   box-sizing: border-box;
 }
 .react-calendar button {
-  margin: 0px 0px 25px 0px;
+  margin:0 0px 15px 0;
   border: 0;
   outline: none;
+  width:56px;
+  height: 56px;
 }
+
 .react-calendar button:enabled:hover {
   cursor: pointer;
 }
@@ -271,26 +271,35 @@
 
 
 }
+.react-calendar__navigation{
+  margin-bottom:20px;
+}
+.react-calendar__navigation__label__labelText--from{
+  font-size: 24px;
+  font-weight: 700;
+}
+
 
 .highlight {
   background: #31f3e0;
   border-radius: 30px;
 }
 
-.b{
+.b_all{
   width:15px;
   height:15px;
   border-radius:50%;
   margin:5px;
   border:0px;
+  display: inline-block;
 }
 
-#b1{
+#b_red{
   background-color: rgb(241, 102, 102);
 }
-#b2{
+#b_yel{
   background-color: rgb(246, 246, 86);
 }
-#b3{
+#b_gre{
   background-color: greenyellow;
 }

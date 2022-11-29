@@ -1,35 +1,29 @@
 import React, { useState } from "react";
 import "./Login.css";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import { login } from "../../function/request";
 
 export default function Login() {
+<<<<<<< HEAD
 	const homeAddr="172.30.17.114:3001";
 	//const homeAddr = "akdfkeks.iptime.org:3001";
+=======
+>>>>>>> 903577b6b0ee9b22dcfe8adf1591590212c842ed
 	const navigate = useNavigate();
 	const [userId, setuserId] = useState("");
 	const [userPw, setuserPw] = useState("");
 
-	const goToMain = async () => {
-		axios({
-			method: "post",
-			url: `http://${homeAddr}/auth/login`,
-			data: {
-				userId: userId,
-				userPw: userPw,
-			},
-		}).then((Response) => {
-			if (Response.data.success === true) {
-				const { accessToken } = Response.data;
-				axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-				navigate("/main");
-			} else {
-				alert("로그인실패");
+	const loginButtonListener = async () => {
+		try {
+			const { flag, user } = await login(userId, userPw);
+			if (flag === true) {
+				navigate("/main", { state: { user } });
 			}
-		});
+		} catch (err) {
+			console.log(err);
+			alert("Login failed");
+		}
 	};
-
 	const onChangeid = (e) => {
 		setuserId(e.target.value);
 	};
@@ -59,7 +53,7 @@ export default function Login() {
 					onChange={onChangepw}
 				></input>
 				<br />
-				<button onClick={goToMain} id="login_l" type="button">
+				<button onClick={loginButtonListener} id="login_l" type="button">
 					로그인
 				</button>
 				<br />

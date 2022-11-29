@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './follower.css';
 
 export default class FollowerTitle extends Component {
